@@ -58,8 +58,3 @@ cd ...
 ``` shell
 pip install dash dash-bootstrap-components pandas plotly
 ```
-
-### 3. Run the app
-``` shell
-python -m app.py
-```
