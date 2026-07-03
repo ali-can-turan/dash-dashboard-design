@@ -55,13 +55,13 @@ def layout():
 	## header wrap
 	header_wrap=html.Div([
 		img,
-		html.Div(children=
-			[header, s_header, line],
-		style=dict(display="flex",
-				   flexDirection="column",
-				   alignItems="flex-start",
-				   justifyContent="right",
-			        fontFamily="serif")
+		html.Div(children=[header, s_header, line],
+					style=dict(display="flex",
+							   flexDirection="column",
+							   alignItems="flex-start",
+							   justifyContent="right",
+						        fontFamily="serif"
+						    )
 					),
 		img
 	],
@@ -95,9 +95,9 @@ def layout():
 			persistence=True,
 			persistence_type="memory",
 			id="recession_radio",
-			style=dict(
-				backgroundColor="rgba(0, 0, 0, 0.05)")
-						)
+			style=dict(backgroundColor="rgba(0, 0, 0, 0.05)"),
+			labelStyle=dict(border="1px dotted rgba(0, 0, 0, 0.2)")
+			)
 	])
 
 	# dropdown
@@ -122,7 +122,8 @@ def layout():
 			disabled=False,
 			id="year_dropdown",
 			style=dict(
-				backgrounColor="rgba(0, 0, 0, 0.95", fontSize=14)
+				backgrounColor="rgba(0, 0, 0, 0.95", 
+				fontSize=14)
 					)
 		])
 
@@ -130,8 +131,8 @@ def layout():
 		children="Reset!",
 		n_clicks=0,
 		disabled=True,
-		id="submit",
-		style=dict(height="35px", display="block", transition= "0.3s")
+		id="reset",
+		style=dict(height="35px", display="block", transition= "0.3s", cursor="pointer")
 	)
 
 	## items wrap
@@ -171,6 +172,5 @@ def layout():
 					    dcc.Graph(id="plot4")],
 					  id="plots"
 						  )
-
 
 	return html.Div(children=[header_wrap, items, graphs])
